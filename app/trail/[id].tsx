@@ -98,8 +98,8 @@ export default function TrailDetailScreen() {
       <Stack.Screen options={{ 
         headerShown: true, 
         title: trail.name,
-        headerStyle: { backgroundColor: '#111827' },
-        headerTintColor: '#FFFFFF',
+        headerStyle: { backgroundColor: '#FFFFFF' },
+        headerTintColor: '#000000',
         headerShadowVisible: false,
         headerRight: () => (
           <TouchableOpacity
@@ -212,7 +212,7 @@ export default function TrailDetailScreen() {
           onPress={handleNavigate}
           activeOpacity={0.8}
         >
-          <Navigation size={24} color="#111827" />
+          <Navigation size={24} color="#FFFFFF" />
           <Text style={styles.navigateButtonText}>Start Ride</Text>
         </TouchableOpacity>
       </View>
@@ -223,7 +223,7 @@ export default function TrailDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111827',
+    backgroundColor: '#FFFFFF',
   },
   scrollView: {
     flex: 1,
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F3F4F6',
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderRadius: 12,
@@ -307,17 +307,17 @@ const styles = StyleSheet.create({
   },
   statCard: {
     flex: 1,
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F9FAFB',
     borderRadius: 16,
     padding: 20,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
   },
   statValue: {
     fontSize: 32,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginTop: 12,
     marginBottom: 4,
   },
@@ -332,12 +332,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 12,
   },
   description: {
     fontSize: 16,
-    color: '#D1D5DB',
+    color: '#4B5563',
     lineHeight: 24,
   },
   ratingStars: {
@@ -356,9 +356,9 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     padding: 20,
-    backgroundColor: '#111827',
+    backgroundColor: '#FFFFFF',
     borderTopWidth: 1,
-    borderTopColor: '#374151',
+    borderTopColor: '#E5E7EB',
   },
   navigateButton: {
     backgroundColor: '#000000',
@@ -372,7 +372,7 @@ const styles = StyleSheet.create({
   navigateButtonText: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#111827',
+    color: '#FFFFFF',
   },
   errorText: {
     fontSize: 18,

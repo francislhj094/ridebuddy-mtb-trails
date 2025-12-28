@@ -207,10 +207,7 @@ export default function RideScreen() {
 
   return (
     <View style={styles.container}>
-      <LinearGradient
-        colors={['#0F172A', '#111827', '#111827']}
-        style={styles.backgroundGradient}
-      />
+
       <SafeAreaView style={styles.safeArea} edges={['top']}>
         <Stack.Screen options={{ headerShown: false }} />
       
@@ -255,7 +252,7 @@ export default function RideScreen() {
             onPress={centerOnUser}
             activeOpacity={0.8}
           >
-            <Locate size={24} color="#111827" />
+            <Locate size={24} color="#FFFFFF" />
           </TouchableOpacity>
         </View>
       )}
@@ -327,7 +324,7 @@ export default function RideScreen() {
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
             >
-              <Play size={32} color="#111827" fill="#111827" />
+              <Play size={32} color="#FFFFFF" fill="#FFFFFF" />
               <Text style={styles.startButtonText}>Start Ride</Text>
             </LinearGradient>
           </TouchableOpacity>
@@ -373,13 +370,7 @@ export default function RideScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  backgroundGradient: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
+    backgroundColor: '#FFFFFF',
   },
   safeArea: {
     flex: 1,
@@ -390,7 +381,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     overflow: 'hidden',
     borderWidth: 2,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
     marginBottom: 20,
     position: 'relative',
   },
@@ -409,7 +400,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 28,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
   },
   statusBadge: {
     flexDirection: 'row',
@@ -447,7 +438,7 @@ const styles = StyleSheet.create({
   motivationalText: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#111827',
+    color: '#FFFFFF',
     textAlign: 'center',
   },
   mainStat: {
@@ -479,7 +470,7 @@ const styles = StyleSheet.create({
   mainStatValue: {
     fontSize: 88,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#000000',
     marginTop: 8,
     letterSpacing: -2,
   },
@@ -495,17 +486,17 @@ const styles = StyleSheet.create({
   },
   statCard: {
     flex: 1,
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F9FAFB',
     borderRadius: 16,
     padding: 20,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
   },
   statValue: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginTop: 12,
   },
   statLabel: {
@@ -540,7 +531,7 @@ const styles = StyleSheet.create({
   startButtonText: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#111827',
+    color: '#FFFFFF',
   },
   activeControls: {
     flexDirection: 'row',

@@ -27,8 +27,8 @@ export default function SettingsScreen() {
       <Stack.Screen options={{ 
         headerShown: true, 
         title: 'Settings',
-        headerStyle: { backgroundColor: '#111827' },
-        headerTintColor: '#FFFFFF',
+        headerStyle: { backgroundColor: '#FFFFFF' },
+        headerTintColor: '#000000',
         headerShadowVisible: false,
       }} />
       
@@ -93,7 +93,7 @@ export default function SettingsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111827',
+    backgroundColor: '#FFFFFF',
   },
   scrollView: {
     flex: 1,
@@ -107,18 +107,18 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 12,
   },
   settingCard: {
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F9FAFB',
     borderRadius: 16,
     padding: 16,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
   },
   settingLeft: {
     flexDirection: 'row',
@@ -129,10 +129,12 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#111827',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 16,
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
   },
   dangerIcon: {
     backgroundColor: '#EF444420',
@@ -143,7 +145,7 @@ const styles = StyleSheet.create({
   settingTitle: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 2,
   },
   dangerText: {

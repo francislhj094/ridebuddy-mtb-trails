@@ -64,7 +64,7 @@ export default function ProfileScreen() {
           style={styles.settingsButton}
           activeOpacity={0.7}
         >
-          <Settings size={24} color="#FFFFFF" />
+          <Settings size={24} color="#000000" />
         </TouchableOpacity>
       </View>
 
@@ -248,7 +248,7 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111827',
+    backgroundColor: '#FFFFFF',
   },
   header: {
     paddingHorizontal: 20,
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 28,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
   },
   settingsButton: {
     width: 44,
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 22,
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F3F4F6',
   },
   scrollView: {
     flex: 1,
@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F3F4F6',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 16,
@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
   userName: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 4,
   },
   userEmail: {
@@ -309,7 +309,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 16,
   },
   statsGrid: {
@@ -318,12 +318,12 @@ const styles = StyleSheet.create({
   },
   statCard: {
     flex: 1,
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F9FAFB',
     borderRadius: 16,
     padding: 20,
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
   },
   statIcon: {
     marginBottom: 12,
@@ -331,7 +331,7 @@ const styles = StyleSheet.create({
   statValue: {
     fontSize: 28,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 4,
   },
   statLabel: {
@@ -351,7 +351,7 @@ const styles = StyleSheet.create({
   unlockedBadge: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F3F4F6',
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 12,
@@ -365,13 +365,13 @@ const styles = StyleSheet.create({
     color: '#000000',
   },
   achievementCard: {
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F9FAFB',
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,
     flexDirection: 'row',
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
   },
   achievementIconContainer: {
     marginRight: 16,
@@ -380,10 +380,10 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 32,
-    backgroundColor: '#374151',
+    backgroundColor: '#E5E7EB',
     overflow: 'hidden',
     borderWidth: 2,
-    borderColor: '#4B5563',
+    borderColor: '#D1D5DB',
   },
   achievementIconUnlocked: {
     borderColor: '#000000',
@@ -414,10 +414,10 @@ const styles = StyleSheet.create({
   achievementTitle: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#9CA3AF',
+    color: '#6B7280',
   },
   achievementTitleUnlocked: {
-    color: '#FFFFFF',
+    color: '#000000',
   },
   checkMark: {
     width: 24,
@@ -430,7 +430,7 @@ const styles = StyleSheet.create({
   checkMarkText: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#111827',
+    color: '#FFFFFF',
   },
   achievementDescription: {
     fontSize: 13,
@@ -442,7 +442,7 @@ const styles = StyleSheet.create({
   },
   progressBar: {
     height: 6,
-    backgroundColor: '#374151',
+    backgroundColor: '#E5E7EB',
     borderRadius: 3,
     overflow: 'hidden',
     marginBottom: 6,
@@ -469,14 +469,14 @@ const styles = StyleSheet.create({
     marginBottom: 32,
   },
   bookmarkCard: {
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F9FAFB',
     borderRadius: 16,
     padding: 12,
     marginBottom: 12,
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
     gap: 12,
   },
   bookmarkImage: {
@@ -491,7 +491,7 @@ const styles = StyleSheet.create({
   bookmarkName: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
   },
   bookmarkDifficulty: {
     alignSelf: 'flex-start',
@@ -515,7 +515,7 @@ const styles = StyleSheet.create({
   },
   bookmarkStatText: {
     fontSize: 12,
-    color: '#D1D5DB',
+    color: '#6B7280',
     fontWeight: '500',
   },
 });

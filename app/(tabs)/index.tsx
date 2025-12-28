@@ -225,10 +225,7 @@ export default function DiscoverScreen() {
 
   return (
     <View style={styles.container}>
-      <LinearGradient
-        colors={['#0F172A', '#111827', '#111827']}
-        style={styles.backgroundGradient}
-      />
+
       <SafeAreaView style={styles.safeArea} edges={['top']}>
         <Stack.Screen options={{ headerShown: false }} />
         
@@ -296,7 +293,7 @@ export default function DiscoverScreen() {
             }}
             activeOpacity={0.8}
           >
-            <Locate size={20} color="#111827" />
+            <Locate size={20} color="#FFFFFF" />
           </TouchableOpacity>
             </View>
           )}
@@ -330,7 +327,7 @@ export default function DiscoverScreen() {
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
         >
-          <Play size={28} color="#111827" fill="#111827" />
+          <Play size={28} color="#FFFFFF" fill="#FFFFFF" />
           <Text style={styles.floatingButtonText}>Start Ride</Text>
         </LinearGradient>
           </TouchableOpacity>
@@ -448,13 +445,7 @@ export default function DiscoverScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  backgroundGradient: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
+    backgroundColor: '#FFFFFF',
   },
   safeArea: {
     flex: 1,
@@ -476,11 +467,11 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 28,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
   },
   headerSubtitle: {
     fontSize: 16,
-    color: '#9CA3AF',
+    color: '#6B7280',
     marginLeft: 44,
   },
   searchContainer: {
@@ -491,14 +482,14 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F3F4F6',
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 14,
     fontSize: 16,
-    color: '#FFFFFF',
+    color: '#000000',
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#D1D5DB',
   },
   filterButton: {
     backgroundColor: '#000000',
@@ -514,7 +505,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     overflow: 'hidden',
     borderWidth: 2,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
     position: 'relative',
   },
   map: {
@@ -549,16 +540,24 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 16,
   },
   trailCard: {
-    backgroundColor: '#1F2937',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     marginBottom: 16,
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
   },
   trailImage: {
     width: '100%',
@@ -596,7 +595,7 @@ const styles = StyleSheet.create({
   trailName: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     flex: 1,
     marginRight: 12,
   },
@@ -633,7 +632,7 @@ const styles = StyleSheet.create({
   },
   statText: {
     fontSize: 14,
-    color: '#D1D5DB',
+    color: '#6B7280',
     fontWeight: '500',
   },
   distanceFromUser: {
@@ -670,7 +669,7 @@ const styles = StyleSheet.create({
   floatingButtonText: {
     fontSize: 17,
     fontWeight: '700',
-    color: '#111827',
+    color: '#FFFFFF',
   },
   modalOverlay: {
     flex: 1,
@@ -678,7 +677,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   modalContent: {
-    backgroundColor: '#1F2937',
+    backgroundColor: '#FFFFFF',
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     paddingTop: 20,
@@ -695,7 +694,7 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
   },
   modalClose: {
     fontSize: 16,
@@ -708,7 +707,7 @@ const styles = StyleSheet.create({
   filterTitle: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 12,
   },
   difficultyFilters: {
@@ -722,7 +721,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   difficultyFilterChipInactive: {
-    backgroundColor: '#374151',
+    backgroundColor: '#E5E7EB',
     opacity: 0.5,
   },
   difficultyFilterText: {
@@ -731,7 +730,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   difficultyFilterTextInactive: {
-    color: '#9CA3AF',
+    color: '#6B7280',
   },
   rangeInputs: {
     flexDirection: 'row',
@@ -740,14 +739,14 @@ const styles = StyleSheet.create({
   },
   rangeInput: {
     flex: 1,
-    backgroundColor: '#374151',
+    backgroundColor: '#F3F4F6',
     borderRadius: 10,
     paddingHorizontal: 16,
     paddingVertical: 12,
     fontSize: 16,
-    color: '#FFFFFF',
+    color: '#000000',
     borderWidth: 1,
-    borderColor: '#4B5563',
+    borderColor: '#D1D5DB',
   },
   rangeSeparator: {
     fontSize: 14,
@@ -755,7 +754,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   resetButton: {
-    backgroundColor: '#374151',
+    backgroundColor: '#E5E7EB',
     borderRadius: 12,
     paddingVertical: 16,
     alignItems: 'center',
@@ -764,6 +763,6 @@ const styles = StyleSheet.create({
   resetButtonText: {
     fontSize: 16,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
   },
 });

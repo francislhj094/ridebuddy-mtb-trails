@@ -119,7 +119,7 @@ export default function ActivityScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111827',
+    backgroundColor: '#FFFFFF',
   },
   header: {
     paddingHorizontal: 20,
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 28,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 4,
   },
   headerSubtitle: {
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   emptyTitle: {
     fontSize: 22,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginTop: 20,
     marginBottom: 8,
   },
@@ -162,12 +162,12 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   rideCard: {
-    backgroundColor: '#1F2937',
+    backgroundColor: '#F9FAFB',
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
   },
   rideHeader: {
     flexDirection: 'row',
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   rideDate: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 2,
   },
   rideTime: {
@@ -193,13 +193,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingVertical: 12,
-    backgroundColor: '#111827',
+    backgroundColor: '#FFFFFF',
     borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
   },
   miniStatValue: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginTop: 8,
     marginBottom: 2,
   },

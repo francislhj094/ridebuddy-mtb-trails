@@ -56,17 +56,13 @@ export default function RideSummaryScreen() {
 
   return (
     <View style={styles.container}>
-      <LinearGradient
-        colors={['#0F172A', '#111827', '#1F2937']}
-        style={styles.backgroundGradient}
-      />
       <SafeAreaView style={styles.safeArea} edges={['bottom']}>
       <Stack.Screen options={{ 
         headerShown: true, 
         title: 'Ride Complete',
         presentation: 'modal',
-        headerStyle: { backgroundColor: '#111827' },
-        headerTintColor: '#FFFFFF',
+        headerStyle: { backgroundColor: '#FFFFFF' },
+        headerTintColor: '#000000',
       }} />
       
       <Animated.View style={[styles.content, { opacity: fadeAnim }]}>
@@ -89,35 +85,26 @@ export default function RideSummaryScreen() {
         <Text style={styles.subtitle}>Your ride has been saved</Text>
 
         <View style={styles.summaryCard}>
-          <LinearGradient
-            colors={['#1F2937', '#111827']}
-            style={styles.summaryCardGradient}
-          >
+          <View style={styles.summaryCardGradient}>
             <View style={styles.mainStatRow}>
               <View style={styles.mainStatContainer}>
-                <LinearGradient
-                  colors={['#00000020', '#00000010']}
-                  style={styles.mainStatGradient}
-                >
+                <View style={styles.mainStatGradient}>
                   <MapPin size={32} color="#000000" />
                   <Text style={styles.mainStatValue}>
                     {convertDistance(lastRide.stats.distance).toFixed(2)}
                   </Text>
                   <Text style={styles.mainStatLabel}>{distanceUnit}</Text>
-                </LinearGradient>
+                </View>
               </View>
 
               <View style={styles.mainStatContainer}>
-                <LinearGradient
-                  colors={['#3B82F620', '#3B82F610']}
-                  style={styles.mainStatGradient}
-                >
+                <View style={styles.mainStatGradient}>
                   <Clock size={32} color="#3B82F6" />
                   <Text style={styles.mainStatValue}>
                     {formatDuration(lastRide.stats.duration)}
                   </Text>
                   <Text style={styles.mainStatLabel}>Duration</Text>
-                </LinearGradient>
+                </View>
               </View>
             </View>
             <View style={styles.secondaryStatsRow}>
@@ -147,7 +134,7 @@ export default function RideSummaryScreen() {
                 </View>
               </View>
             </View>
-          </LinearGradient>
+          </View>
         </View>
       </Animated.View>
 
@@ -175,13 +162,7 @@ export default function RideSummaryScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  backgroundGradient: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
+    backgroundColor: '#FFFFFF',
   },
   safeArea: {
     flex: 1,
@@ -221,7 +202,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#000000',
     textAlign: 'center',
   },
   subtitle: {
@@ -245,8 +226,9 @@ const styles = StyleSheet.create({
   summaryCardGradient: {
     padding: 24,
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
     borderRadius: 24,
+    backgroundColor: '#F9FAFB',
   },
   mainStatRow: {
     flexDirection: 'row',
@@ -263,12 +245,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
+    backgroundColor: '#FFFFFF',
   },
   mainStatValue: {
     fontSize: 36,
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: '#000000',
     marginTop: 12,
     marginBottom: 4,
   },
@@ -281,11 +264,11 @@ const styles = StyleSheet.create({
   secondaryStatsRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1F2937',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 20,
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#E5E7EB',
   },
   secondaryStatItem: {
     flex: 1,
@@ -297,14 +280,14 @@ const styles = StyleSheet.create({
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: '#111827',
+    backgroundColor: '#F3F4F6',
     alignItems: 'center',
     justifyContent: 'center',
   },
   secondaryStatValue: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
   },
   secondaryStatLabel: {
     fontSize: 12,
@@ -314,7 +297,7 @@ const styles = StyleSheet.create({
   divider: {
     width: 1,
     height: 40,
-    backgroundColor: '#374151',
+    backgroundColor: '#E5E7EB',
   },
   footer: {
     padding: 20,
@@ -338,6 +321,6 @@ const styles = StyleSheet.create({
   doneButtonText: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#111827',
+    color: '#FFFFFF',
   },
 });
