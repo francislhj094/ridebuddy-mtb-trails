@@ -3,7 +3,7 @@ import * as Haptics from 'expo-haptics';
 import * as Location from 'expo-location';
 import { Play, Pause, Square, MapPin, Clock, TrendingUp, Gauge, Locate } from 'lucide-react-native';
 import React, { useEffect, useState, useCallback } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Animated, Platform } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Animated, Platform, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import MapView, { Polyline, PROVIDER_GOOGLE } from 'react-native-maps';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -221,43 +221,48 @@ export default function RideScreen() {
         )}
       </View>
 
-      {userLocation && (
-        <View style={styles.mapContainer}>
-          <MapView
-            ref={(ref) => setMapRef(ref)}
-            style={styles.map}
-            provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
-            initialRegion={{
-              latitude: userLocation.latitude,
-              longitude: userLocation.longitude,
-              latitudeDelta: 0.01,
-              longitudeDelta: 0.01,
-            }}
-            showsUserLocation
-            showsMyLocationButton={false}
-          >
-            {currentRide && currentRide.coordinates.length > 1 && (
-              <Polyline
-                coordinates={currentRide.coordinates.map(coord => ({
-                  latitude: coord.latitude,
-                  longitude: coord.longitude,
-                }))}
-                strokeColor="#000000"
-                strokeWidth={4}
-              />
-            )}
-          </MapView>
-          <TouchableOpacity 
-            style={styles.centerButton}
-            onPress={centerOnUser}
-            activeOpacity={0.8}
-          >
-            <Locate size={24} color="#FFFFFF" />
-          </TouchableOpacity>
-        </View>
-      )}
+      <ScrollView 
+        style={styles.scrollContent}
+        contentContainerStyle={styles.scrollContentContainer}
+        showsVerticalScrollIndicator={false}
+      >
+        {userLocation && (
+          <View style={styles.mapContainer}>
+            <MapView
+              ref={(ref) => setMapRef(ref)}
+              style={styles.map}
+              provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
+              initialRegion={{
+                latitude: userLocation.latitude,
+                longitude: userLocation.longitude,
+                latitudeDelta: 0.01,
+                longitudeDelta: 0.01,
+              }}
+              showsUserLocation
+              showsMyLocationButton={false}
+            >
+              {currentRide && currentRide.coordinates.length > 1 && (
+                <Polyline
+                  coordinates={currentRide.coordinates.map(coord => ({
+                    latitude: coord.latitude,
+                    longitude: coord.longitude,
+                  }))}
+                  strokeColor="#000000"
+                  strokeWidth={4}
+                />
+              )}
+            </MapView>
+            <TouchableOpacity 
+              style={styles.centerButton}
+              onPress={centerOnUser}
+              activeOpacity={0.8}
+            >
+              <Locate size={24} color="#FFFFFF" />
+            </TouchableOpacity>
+          </View>
+        )}
 
-      <View style={styles.statsContainer}>
+        <View style={styles.statsContainer}>
         {isTracking && motivationalMessage && (
           <Animated.View style={[styles.motivationalBanner, { opacity: messageOpacity }]}>
             <LinearGradient
@@ -310,6 +315,7 @@ export default function RideScreen() {
           </View>
         </View>
       </View>
+      </ScrollView>
 
       <View style={styles.controls}>
         {!isTracking ? (
@@ -375,6 +381,12 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
   },
+  scrollContent: {
+    flex: 1,
+  },
+  scrollContentContainer: {
+    paddingBottom: 20,
+  },
   mapContainer: {
     height: 250,
     marginHorizontal: 20,
@@ -424,6 +436,7 @@ const styles = StyleSheet.create({
   },
   statsContainer: {
     paddingHorizontal: 20,
+    paddingBottom: 20,
   },
   motivationalBanner: {
     marginBottom: 20,
@@ -444,7 +457,7 @@ const styles = StyleSheet.create({
   mainStat: {
     alignItems: 'center',
     marginTop: 20,
-    marginBottom: 40,
+    marginBottom: 30,
   },
   speedCircle: {
     borderRadius: 160,
@@ -459,16 +472,16 @@ const styles = StyleSheet.create({
     elevation: 12,
   },
   speedCircleGradient: {
-    width: 280,
-    height: 280,
-    borderRadius: 140,
+    width: 240,
+    height: 240,
+    borderRadius: 120,
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 4,
     borderColor: '#00000030',
   },
   mainStatValue: {
-    fontSize: 88,
+    fontSize: 72,
     fontWeight: '800',
     color: '#000000',
     marginTop: 8,
@@ -507,7 +520,10 @@ const styles = StyleSheet.create({
   },
   controls: {
     paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingVertical: 16,
+    backgroundColor: '#FFFFFF',
+    borderTopWidth: 1,
+    borderTopColor: '#E5E7EB',
   },
   startButton: {
     borderRadius: 20,
