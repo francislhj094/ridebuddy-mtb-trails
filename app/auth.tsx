@@ -66,12 +66,12 @@ export default function AuthScreen() {
             {isSignUp && (
               <View style={styles.inputContainer}>
                 <View style={styles.inputIcon}>
-                  <User size={20} color="#9CA3AF" />
+                  <User size={20} color="#6B7280" />
                 </View>
                 <TextInput
                   style={styles.input}
                   placeholder="Full Name"
-                  placeholderTextColor="#6B7280"
+                  placeholderTextColor="#9CA3AF"
                   value={name}
                   onChangeText={setName}
                   autoCapitalize="words"
@@ -81,12 +81,12 @@ export default function AuthScreen() {
 
             <View style={styles.inputContainer}>
               <View style={styles.inputIcon}>
-                <Mail size={20} color="#9CA3AF" />
+                <Mail size={20} color="#6B7280" />
               </View>
               <TextInput
                 style={styles.input}
                 placeholder="Email"
-                placeholderTextColor="#6B7280"
+                placeholderTextColor="#9CA3AF"
                 value={email}
                 onChangeText={setEmail}
                 autoCapitalize="none"
@@ -97,12 +97,12 @@ export default function AuthScreen() {
 
             <View style={styles.inputContainer}>
               <View style={styles.inputIcon}>
-                <Lock size={20} color="#9CA3AF" />
+                <Lock size={20} color="#6B7280" />
               </View>
               <TextInput
                 style={styles.input}
                 placeholder="Password"
-                placeholderTextColor="#6B7280"
+                placeholderTextColor="#9CA3AF"
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
@@ -150,7 +150,7 @@ export default function AuthScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111827',
+    backgroundColor: '#FFFFFF',
   },
   keyboardView: {
     flex: 1,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     width: 96,
     height: 96,
     borderRadius: 48,
-    backgroundColor: '#1F2937',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 20,
@@ -178,12 +178,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 36,
     fontWeight: '700',
-    color: '#FFFFFF',
+    color: '#000000',
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
-    color: '#9CA3AF',
+    color: '#000000',
   },
   form: {
     width: '100%',
@@ -191,11 +191,11 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1F2937',
+    backgroundColor: '#FFFFFF',
     borderRadius: 16,
     marginBottom: 16,
     borderWidth: 1,
-    borderColor: '#374151',
+    borderColor: '#D1D5DB',
   },
   inputIcon: {
     paddingLeft: 16,
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingRight: 16,
     fontSize: 16,
-    color: '#FFFFFF',
+    color: '#000000',
   },
   errorText: {
     color: '#EF4444',
@@ -224,7 +224,7 @@ const styles = StyleSheet.create({
   submitButtonText: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#111827',
+    color: '#FFFFFF',
   },
   switchButton: {
     marginTop: 24,
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
   },
   switchText: {
     fontSize: 15,
-    color: '#9CA3AF',
+    color: '#000000',
   },
   switchTextBold: {
     fontWeight: '700',
