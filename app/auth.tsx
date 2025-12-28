@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuth } from '@/contexts/AuthContext';
+import { Image } from 'expo-image';
 
 export default function AuthScreen() {
   const router = useRouter();
@@ -53,6 +54,11 @@ export default function AuthScreen() {
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.header}>
+            <Image
+              source={require('@/assets/images/icon.png')}
+              style={styles.logo}
+              contentFit="contain"
+            />
             <Text style={styles.title}>RideBuddy</Text>
             <Text style={styles.subtitle}>
               {isSignUp ? 'Create your account' : 'Welcome back'}
@@ -160,6 +166,11 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     marginBottom: 40,
+  },
+  logo: {
+    width: 100,
+    height: 100,
+    marginBottom: 16,
   },
   title: {
     fontSize: 36,
