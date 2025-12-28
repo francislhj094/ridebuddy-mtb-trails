@@ -36,6 +36,7 @@ export default function RideScreen() {
   const [motivationalMessage, setMotivationalMessage] = useState('');
   const [messageOpacity] = useState(() => new Animated.Value(0));
   const scaleAnim = useState(() => new Animated.Value(1))[0];
+  const [locationError, setLocationError] = useState<string | null>(null);
 
   const showMotivationalMessage = useCallback(() => {
     const randomMessage = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)];
@@ -92,25 +93,50 @@ export default function RideScreen() {
     const getCurrentLocation = async () => {
       if (Platform.OS !== 'web') {
         try {
-          const { status } = await Location.requestForegroundPermissionsAsync();
-          if (status === 'granted') {
-            locationSubscription = await Location.watchPositionAsync(
-              {
-                accuracy: Location.Accuracy.High,
-                timeInterval: 2000,
-                distanceInterval: 10,
-              },
-              (location) => {
-                setUserLocation({
-                  latitude: location.coords.latitude,
-                  longitude: location.coords.longitude,
-                });
-              }
-            );
+          const serviceStatus = await Location.getProviderStatusAsync();
+          if (!serviceStatus.locationServicesEnabled) {
+            setLocationError('Location services are disabled. Please enable them in settings.');
+            return;
           }
+
+          const { status } = await Location.requestForegroundPermissionsAsync();
+          if (status !== 'granted') {
+            setLocationError('Location permission denied. Please enable location access in settings.');
+            return;
+          }
+
+          const currentPosition = await Location.getCurrentPositionAsync({
+            accuracy: Location.Accuracy.Balanced,
+          });
+          
+          setUserLocation({
+            latitude: currentPosition.coords.latitude,
+            longitude: currentPosition.coords.longitude,
+          });
+          setLocationError(null);
+
+          locationSubscription = await Location.watchPositionAsync(
+            {
+              accuracy: Location.Accuracy.High,
+              timeInterval: 2000,
+              distanceInterval: 10,
+            },
+            (location) => {
+              setUserLocation({
+                latitude: location.coords.latitude,
+                longitude: location.coords.longitude,
+              });
+            }
+          );
         } catch (error) {
           console.error('Location error:', error);
+          setLocationError('Unable to get your location. Please check your settings.');
         }
+      } else {
+        setUserLocation({
+          latitude: 37.7749,
+          longitude: -122.4194,
+        });
       }
     };
 
@@ -226,6 +252,13 @@ export default function RideScreen() {
         contentContainerStyle={styles.scrollContentContainer}
         showsVerticalScrollIndicator={false}
       >
+        {locationError && (
+          <View style={styles.errorContainer}>
+            <MapPin size={24} color="#EF4444" />
+            <Text style={styles.errorText}>{locationError}</Text>
+          </View>
+        )}
+        
         {userLocation && (
           <View style={styles.mapContainer}>
             <MapView
@@ -608,5 +641,23 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
+  },
+  errorContainer: {
+    marginHorizontal: 20,
+    marginBottom: 20,
+    backgroundColor: '#FEE2E2',
+    borderRadius: 12,
+    padding: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+    borderWidth: 1,
+    borderColor: '#FECACA',
+  },
+  errorText: {
+    flex: 1,
+    fontSize: 14,
+    color: '#991B1B',
+    fontWeight: '600',
   },
 });
