@@ -54,7 +54,7 @@ export default function AuthScreen() {
         >
           <View style={styles.header}>
             <View style={styles.logoContainer}>
-              <Mountain size={48} color="#22C55E" />
+              <Mountain size={48} color="#000000" />
             </View>
             <Text style={styles.title}>RideBuddy</Text>
             <Text style={styles.subtitle}>
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 20,
     borderWidth: 3,
-    borderColor: '#22C55E',
+    borderColor: '#000000',
   },
   title: {
     fontSize: 36,
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   submitButton: {
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
     borderRadius: 16,
     paddingVertical: 18,
     alignItems: 'center',
@@ -236,6 +236,6 @@ const styles = StyleSheet.create({
   },
   switchTextBold: {
     fontWeight: '700',
-    color: '#22C55E',
+    color: '#000000',
   },
 });

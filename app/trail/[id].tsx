@@ -109,8 +109,8 @@ export default function TrailDetailScreen() {
           >
             <Bookmark 
               size={24} 
-              color="#22C55E" 
-              fill={bookmarked ? '#22C55E' : 'transparent'}
+              color="#000000" 
+              fill={bookmarked ? '#000000' : 'transparent'}
             />
           </TouchableOpacity>
         ),
@@ -161,7 +161,7 @@ export default function TrailDetailScreen() {
 
           <View style={styles.statsContainer}>
             <View style={styles.statCard}>
-              <MapPin size={28} color="#22C55E" />
+              <MapPin size={28} color="#000000" />
               <Text style={styles.statValue}>
                 {convertDistance(trail.distance).toFixed(1)}
               </Text>
@@ -347,7 +347,7 @@ const styles = StyleSheet.create({
   },
   ratingFeedback: {
     fontSize: 14,
-    color: '#22C55E',
+    color: '#000000',
     fontWeight: '600',
   },
   footer: {
@@ -361,7 +361,7 @@ const styles = StyleSheet.create({
     borderTopColor: '#374151',
   },
   navigateButton: {
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
     borderRadius: 20,
     paddingVertical: 18,
     flexDirection: 'row',

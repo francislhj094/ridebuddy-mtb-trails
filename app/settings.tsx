@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   settingValue: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#22C55E',
+    color: '#000000',
     marginLeft: 12,
   },
   version: {

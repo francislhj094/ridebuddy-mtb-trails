@@ -83,7 +83,7 @@ export default function ActivityScreen() {
 
               <View style={styles.statsGrid}>
                 <View style={styles.miniStat}>
-                  <MapPin size={18} color="#22C55E" />
+                  <MapPin size={18} color="#000000" />
                   <Text style={styles.miniStatValue}>
                     {convertDistance(ride.stats.distance).toFixed(2)}
                   </Text>

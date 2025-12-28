@@ -245,7 +245,7 @@ export default function RideScreen() {
                   latitude: coord.latitude,
                   longitude: coord.longitude,
                 }))}
-                strokeColor="#22C55E"
+                strokeColor="#000000"
                 strokeWidth={4}
               />
             )}
@@ -264,7 +264,7 @@ export default function RideScreen() {
         {isTracking && motivationalMessage && (
           <Animated.View style={[styles.motivationalBanner, { opacity: messageOpacity }]}>
             <LinearGradient
-              colors={['#22C55E', '#16A34A']}
+              colors={['#000000', '#1A1A1A']}
               style={styles.motivationalGradient}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 0 }}
@@ -277,10 +277,10 @@ export default function RideScreen() {
         <Animated.View style={[styles.mainStat, { transform: [{ scale: scaleAnim }] }]}>
           <View style={styles.speedCircle}>
             <LinearGradient
-              colors={['#22C55E20', '#22C55E10']}
+              colors={['#00000020', '#00000010']}
               style={styles.speedCircleGradient}
             >
-              <Gauge size={56} color="#22C55E" strokeWidth={3} />
+              <Gauge size={56} color="#000000" strokeWidth={3} />
               <Text style={styles.mainStatValue}>
                 {convertSpeed(currentSpeed).toFixed(1)}
               </Text>
@@ -322,7 +322,7 @@ export default function RideScreen() {
             activeOpacity={0.8}
           >
             <LinearGradient
-              colors={['#22C55E', '#16A34A']}
+              colors={['#000000', '#1A1A1A']}
               style={styles.startButtonGradient}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
@@ -415,7 +415,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    backgroundColor: '#22C55E20',
+    backgroundColor: '#00000020',
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 20,
@@ -424,12 +424,12 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
   },
   statusText: {
     fontSize: 13,
     fontWeight: '600',
-    color: '#22C55E',
+    color: '#000000',
   },
   statsContainer: {
     paddingHorizontal: 20,
@@ -458,7 +458,7 @@ const styles = StyleSheet.create({
   speedCircle: {
     borderRadius: 160,
     overflow: 'hidden',
-    shadowColor: '#22C55E',
+    shadowColor: '#000000',
     shadowOffset: {
       width: 0,
       height: 8,
@@ -474,7 +474,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 4,
-    borderColor: '#22C55E30',
+    borderColor: '#00000030',
   },
   mainStatValue: {
     fontSize: 88,
@@ -485,7 +485,7 @@ const styles = StyleSheet.create({
   },
   mainStatLabel: {
     fontSize: 22,
-    color: '#22C55E',
+    color: '#000000',
     fontWeight: '700',
     marginTop: 8,
   },
@@ -521,7 +521,7 @@ const styles = StyleSheet.create({
   startButton: {
     borderRadius: 20,
     overflow: 'hidden',
-    shadowColor: '#22C55E',
+    shadowColor: '#000000',
     shadowOffset: {
       width: 0,
       height: 6,
@@ -587,7 +587,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 12,
     right: 12,
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
     width: 44,
     height: 44,
     borderRadius: 22,

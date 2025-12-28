@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     width: '100%',
     maxWidth: 400,
     borderWidth: 2,
-    borderColor: '#22C55E',
+    borderColor: '#000000',
   },
   closeButton: {
     position: 'absolute',
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     width: 140,
     height: 140,
     borderRadius: 70,
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
     opacity: 0.2,
     alignItems: 'center',
     justifyContent: 'center',
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 4,
-    borderColor: '#22C55E',
+    borderColor: '#000000',
     overflow: 'hidden',
   },
   badgeImage: {
@@ -159,14 +159,14 @@ const styles = StyleSheet.create({
   badgeOverlay: {
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(34, 197, 94, 0.3)',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#22C55E',
+    color: '#000000',
     marginBottom: 8,
     textAlign: 'center',
   },
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     lineHeight: 22,
   },
   button: {
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
     paddingHorizontal: 48,
     paddingVertical: 16,
     borderRadius: 12,

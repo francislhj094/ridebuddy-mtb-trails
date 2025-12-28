@@ -235,7 +235,7 @@ export default function DiscoverScreen() {
         <Animated.View style={[styles.content, { opacity: fadeAnim, transform: [{ scale: scaleAnim }] }]}>
           <View style={styles.header}>
         <View style={styles.headerTop}>
-          <Mountain size={32} color="#22C55E" />
+          <Mountain size={32} color="#000000" />
           <Text style={styles.headerTitle}>RideBuddy</Text>
         </View>
         <Text style={styles.headerSubtitle}>Discover your next adventure</Text>
@@ -325,7 +325,7 @@ export default function DiscoverScreen() {
             activeOpacity={0.9}
           >
         <LinearGradient
-          colors={['#22C55E', '#16A34A']}
+          colors={['#000000', '#1A1A1A']}
           style={styles.floatingButtonGradient}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
@@ -501,7 +501,7 @@ const styles = StyleSheet.create({
     borderColor: '#374151',
   },
   filterButton: {
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
     borderRadius: 12,
     width: 48,
     alignItems: 'center',
@@ -525,7 +525,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 12,
     right: 12,
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
     width: 36,
     height: 36,
     borderRadius: 18,
@@ -638,7 +638,7 @@ const styles = StyleSheet.create({
   },
   distanceFromUser: {
     fontSize: 13,
-    color: '#22C55E',
+    color: '#000000',
     fontWeight: '600',
     marginTop: 8,
   },
@@ -650,7 +650,7 @@ const styles = StyleSheet.create({
     bottom: 24,
     right: 20,
     borderRadius: 28,
-    shadowColor: '#22C55E',
+    shadowColor: '#000000',
     shadowOffset: {
       width: 0,
       height: 8,
@@ -700,7 +700,7 @@ const styles = StyleSheet.create({
   modalClose: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#22C55E',
+    color: '#000000',
   },
   filterSection: {
     marginBottom: 28,

@@ -73,7 +73,7 @@ export default function RideSummaryScreen() {
         <Animated.View style={[styles.successIcon, { transform: [{ scale: scaleAnim }] }]}>
           <View style={styles.successIconCircle}>
             <LinearGradient
-              colors={['#22C55E', '#16A34A']}
+              colors={['#000000', '#1A1A1A']}
               style={styles.successIconGradient}
             >
               <CheckCircle size={80} color="#FFFFFF" fill="#FFFFFF" />
@@ -96,10 +96,10 @@ export default function RideSummaryScreen() {
             <View style={styles.mainStatRow}>
               <View style={styles.mainStatContainer}>
                 <LinearGradient
-                  colors={['#22C55E20', '#22C55E10']}
+                  colors={['#00000020', '#00000010']}
                   style={styles.mainStatGradient}
                 >
-                  <MapPin size={32} color="#22C55E" />
+                  <MapPin size={32} color="#000000" />
                   <Text style={styles.mainStatValue}>
                     {convertDistance(lastRide.stats.distance).toFixed(2)}
                   </Text>
@@ -158,7 +158,7 @@ export default function RideSummaryScreen() {
           activeOpacity={0.8}
         >
           <LinearGradient
-            colors={['#22C55E', '#16A34A']}
+            colors={['#000000', '#1A1A1A']}
             style={styles.doneButtonGradient}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
   successIconCircle: {
     borderRadius: 80,
     overflow: 'hidden',
-    shadowColor: '#22C55E',
+    shadowColor: '#000000',
     shadowOffset: {
       width: 0,
       height: 8,
@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
   doneButton: {
     borderRadius: 20,
     overflow: 'hidden',
-    shadowColor: '#22C55E',
+    shadowColor: '#000000',
     shadowOffset: {
       width: 0,
       height: 6,

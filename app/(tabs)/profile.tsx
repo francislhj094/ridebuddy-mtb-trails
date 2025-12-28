@@ -75,7 +75,7 @@ export default function ProfileScreen() {
       >
         <View style={styles.profileSection}>
           <View style={styles.avatar}>
-            <UserIcon size={48} color="#22C55E" />
+            <UserIcon size={48} color="#000000" />
           </View>
           <Text style={styles.userName}>{user?.name || 'Rider'}</Text>
           <Text style={styles.userEmail}>{user?.email}</Text>
@@ -87,7 +87,7 @@ export default function ProfileScreen() {
           <View style={styles.statsGrid}>
             <View style={styles.statCard}>
               <View style={styles.statIcon}>
-                <Calendar size={28} color="#22C55E" />
+                <Calendar size={28} color="#000000" />
               </View>
               <Text style={styles.statValue}>{totalRides}</Text>
               <Text style={styles.statLabel}>Total Rides</Text>
@@ -119,7 +119,7 @@ export default function ProfileScreen() {
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Achievements</Text>
             <View style={styles.unlockedBadge}>
-              <Award size={16} color="#22C55E" />
+              <Award size={16} color="#000000" />
               <Text style={styles.unlockedText}>
                 {unlockedCount}/{achievements.length}
               </Text>
@@ -232,7 +232,7 @@ export default function ProfileScreen() {
                       </View>
                     </View>
                   </View>
-                  <Bookmark size={20} color="#22C55E" fill="#22C55E" />
+                  <Bookmark size={20} color="#000000" fill="#000000" />
                 </TouchableOpacity>
               );
             })}
@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 16,
     borderWidth: 3,
-    borderColor: '#22C55E',
+    borderColor: '#000000',
   },
   userName: {
     fontSize: 24,
@@ -357,12 +357,12 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     gap: 6,
     borderWidth: 1,
-    borderColor: '#22C55E',
+    borderColor: '#000000',
   },
   unlockedText: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#22C55E',
+    color: '#000000',
   },
   achievementCard: {
     backgroundColor: '#1F2937',
@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
     borderColor: '#4B5563',
   },
   achievementIconUnlocked: {
-    borderColor: '#22C55E',
+    borderColor: '#000000',
     borderWidth: 3,
   },
   achievementIcon: {
@@ -398,7 +398,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(34, 197, 94, 0.4)',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -423,7 +423,7 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     borderRadius: 12,
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -449,7 +449,7 @@ const styles = StyleSheet.create({
   },
   progressFill: {
     height: '100%',
-    backgroundColor: '#22C55E',
+    backgroundColor: '#000000',
     borderRadius: 3,
   },
   progressText: {
@@ -459,7 +459,7 @@ const styles = StyleSheet.create({
   },
   unlockedDate: {
     fontSize: 12,
-    color: '#22C55E',
+    color: '#000000',
     fontWeight: '600',
   },
   bottomPadding: {
