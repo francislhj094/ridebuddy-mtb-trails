@@ -231,11 +231,6 @@ export default function DiscoverScreen() {
         
         <Animated.View style={[styles.content, { opacity: fadeAnim, transform: [{ scale: scaleAnim }] }]}>
           <View style={styles.header}>
-            <Image
-              source={require('@/assets/images/icon.png')}
-              style={styles.logo}
-              contentFit="contain"
-            />
         <Text style={styles.headerTitle}>RideBuddy</Text>
         <Text style={styles.headerSubtitle}>Discover your next adventure</Text>
           </View>
@@ -459,12 +454,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 16,
     paddingBottom: 20,
-    alignItems: 'center',
-  },
-  logo: {
-    width: 80,
-    height: 80,
-    marginBottom: 12,
   },
 
   headerTitle: {
