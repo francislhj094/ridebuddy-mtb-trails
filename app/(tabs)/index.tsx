@@ -2,7 +2,7 @@ import { Image } from 'expo-image';
 import * as Location from 'expo-location';
 import * as Haptics from 'expo-haptics';
 import { Stack, useRouter } from 'expo-router';
-import { Mountain, MapPin, TrendingUp, Star, Play, Locate, SlidersHorizontal } from 'lucide-react-native';
+import { MapPin, TrendingUp, Star, Play, Locate, SlidersHorizontal } from 'lucide-react-native';
 import React, { useState, useEffect, useMemo } from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, TextInput, Platform, Modal, Animated } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -231,10 +231,7 @@ export default function DiscoverScreen() {
         
         <Animated.View style={[styles.content, { opacity: fadeAnim, transform: [{ scale: scaleAnim }] }]}>
           <View style={styles.header}>
-        <View style={styles.headerTop}>
-          <Mountain size={32} color="#000000" />
-          <Text style={styles.headerTitle}>RideBuddy</Text>
-        </View>
+        <Text style={styles.headerTitle}>RideBuddy</Text>
         <Text style={styles.headerSubtitle}>Discover your next adventure</Text>
           </View>
 
@@ -458,12 +455,7 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingBottom: 20,
   },
-  headerTop: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-    marginBottom: 8,
-  },
+
   headerTitle: {
     fontSize: 28,
     fontWeight: '700',
@@ -472,7 +464,6 @@ const styles = StyleSheet.create({
   headerSubtitle: {
     fontSize: 16,
     color: '#6B7280',
-    marginLeft: 44,
   },
   searchContainer: {
     paddingHorizontal: 20,

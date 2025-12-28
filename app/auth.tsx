@@ -1,5 +1,5 @@
 import { Stack, useRouter } from 'expo-router';
-import { Mountain, Mail, Lock, User } from 'lucide-react-native';
+import { Mail, Lock, User } from 'lucide-react-native';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -53,9 +53,6 @@ export default function AuthScreen() {
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.header}>
-            <View style={styles.logoContainer}>
-              <Mountain size={48} color="#000000" />
-            </View>
             <Text style={styles.title}>RideBuddy</Text>
             <Text style={styles.subtitle}>
               {isSignUp ? 'Create your account' : 'Welcome back'}
@@ -164,17 +161,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 40,
   },
-  logoContainer: {
-    width: 96,
-    height: 96,
-    borderRadius: 48,
-    backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 20,
-    borderWidth: 3,
-    borderColor: '#000000',
-  },
+
   title: {
     fontSize: 36,
     fontWeight: '700',
