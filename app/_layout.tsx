@@ -42,15 +42,20 @@ function RootLayoutNav() {
 export default function RootLayout() {
   useEffect(() => {
     const requestPermissions = async () => {
-      if (Platform.OS !== 'web') {
-        const { status } = await Location.requestForegroundPermissionsAsync();
-        if (status === 'granted') {
-          console.log('Location permissions granted');
-        } else {
-          console.log('Location permissions denied');
+      try {
+        if (Platform.OS !== 'web') {
+          const { status } = await Location.requestForegroundPermissionsAsync();
+          if (status === 'granted') {
+            console.log('Location permissions granted');
+          } else {
+            console.log('Location permissions denied');
+          }
         }
+      } catch (error) {
+        console.error('Failed to request location permissions:', error);
+      } finally {
+        SplashScreen.hideAsync();
       }
-      SplashScreen.hideAsync();
     };
     
     requestPermissions();
@@ -65,7 +70,7 @@ export default function RootLayout() {
               <RideProvider>
                 <BookmarksProvider>
                   <AchievementsProvider>
-                    <GestureHandlerRootView>
+                    <GestureHandlerRootView style={{ flex: 1 }}>
                       <RootLayoutNav />
                     </GestureHandlerRootView>
                   </AchievementsProvider>
