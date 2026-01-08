@@ -65,4 +65,17 @@ export const usersRouter = createTRPCRouter({
       const { password, ...userWithoutPassword } = user;
       return userWithoutPassword;
     }),
+
+  deleteAccount: protectedProcedure
+    .mutation(({ ctx }) => {
+      const user = users.get(ctx.userId);
+      if (!user) {
+        throw new Error("User not found");
+      }
+
+      users.delete(ctx.userId);
+      console.log(`Account deleted for user: ${ctx.userId}`);
+      
+      return { success: true, message: "Account successfully deleted" };
+    }),
 });

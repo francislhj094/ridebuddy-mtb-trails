@@ -13,6 +13,7 @@ export const [AuthProvider, useAuth] = createContextHook(() => {
 
   const signUpMutation = trpc.users.signUp.useMutation();
   const signInMutation = trpc.users.signIn.useMutation();
+  const deleteAccountMutation = trpc.users.deleteAccount.useMutation();
 
   useEffect(() => {
     loadUser();
@@ -61,12 +62,27 @@ export const [AuthProvider, useAuth] = createContextHook(() => {
     setUser(null);
   };
 
+  const deleteAccount = async () => {
+    try {
+      await deleteAccountMutation.mutateAsync();
+      await AsyncStorage.removeItem(AUTH_KEY);
+      await AsyncStorage.removeItem(TOKEN_KEY);
+      setUser(null);
+      console.log('Account deleted successfully');
+    } catch (error) {
+      console.error('Delete account failed:', error);
+      throw error;
+    }
+  };
+
   return {
     user,
-    isLoading: isLoading || signUpMutation.isPending || signInMutation.isPending,
+    isLoading: isLoading || signUpMutation.isPending || signInMutation.isPending || deleteAccountMutation.isPending,
     signUp,
     signIn,
     signOut,
+    deleteAccount,
+    isDeletingAccount: deleteAccountMutation.isPending,
     isAuthenticated: !!user
   };
 });
