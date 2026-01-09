@@ -17,13 +17,11 @@
       "supportsTablet": false,
       "bundleIdentifier": "app.rork.ridebuddy-mtb-trails",
       "infoPlist": {
-        "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location.",
-        "NSLocationAlwaysUsageDescription": "Allow $(PRODUCT_NAME) to use your location.",
-        "NSLocationWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use your location.",
-        "UIBackgroundModes": [
-          "location"
-        ]
-      }
+"NSLocationAlwaysAndWhenInUseUsageDescription": "$(PRODUCT_NAME) uses your location to track your mountain bike rides in real-time, show your position on trail maps, and calculate ride statistics like distance and speed. For example, when you start a ride, your GPS location is recorded to create a route map of your trail.",
+"NSLocationAlwaysUsageDescription": "$(PRODUCT_NAME) uses your location to continuously track your mountain bike ride even when the app is in the background. This allows you to keep your phone in your pocket while riding and still record your complete route and statistics.",
+"NSLocationWhenInUseUsageDescription": "$(PRODUCT_NAME) uses your location to show nearby trails, display your position on the map, and track your ride statistics like distance, speed, and elevation. For example, your location helps find trails close to you.",
+"UIBackgroundModes": ["location"]
+}
     },
     "android": {
       "adaptiveIcon": {
@@ -55,10 +53,7 @@
       [
         "expo-location",
         {
-          "isAndroidForegroundServiceEnabled": true,
-          "isAndroidBackgroundLocationEnabled": true,
-          "isIosBackgroundLocationEnabled": true,
-          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
+          "locationAlwaysAndWhenInUsePermission": "$(PRODUCT_NAME) uses your location to track your mountain bike rides in real-time, show your position on trail maps, and calculate ride statistics like distance and speed."
         }
       ]
     ],
